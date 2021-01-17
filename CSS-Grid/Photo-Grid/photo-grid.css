@@ -1,0 +1,45 @@
+.photo-grid{
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    /*
+    Rows in the grid are very short. This is they're being automatically
+    sized based on the text content in the children divs.
+
+    Solution is to use grid-auto-rows property to set size of all the rows in
+    the grid.
+    */
+    grid-auto-rows: 240px;
+}
+
+/*
+Now our goal is to make indiviudal rows with .card-tall class
+span across multiple rows, vertically. 
+We can do this grid-row property. This can be done explicitly like
+grid-row : 1/4 ...Implies that span the row starting from 1st horizontal
+line and ending at the 4th horizontal line. 
+
+Implicitly it can be done via
+grid-row: span 2/ auto
+
+we need to provide a starting and ending point to the grid row property.
+start = span 2 //span 2 implies that expand across two rows from the starting 
+postion of the individual item. 
+end = auto //ending point can be figured out automatically.
+
+Also, we are using, media screen because when the screen size
+is very small, spanning rows or columns doesnt work very well.  
+
+*/
+
+
+@media screen and (min-width: 600px)
+{
+.card-tall{
+    grid-row:span 2/auto;
+}
+
+.card-wide{
+    grid-column: span 2/auto;
+}
+}
