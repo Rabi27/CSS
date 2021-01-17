@@ -1,0 +1,62 @@
+.basic-grid{
+
+    display: grid;
+    gap:1rem;
+
+    /* 
+    
+    grid-template-columns is used to create an explicit grid. The width of each columns
+    of the grid has to defined. This is too much code. And we fr for this purpose.
+
+    1fr = portion of the available space.
+    1fr = 100% space
+    1fr 1fr = 50%space 50%space
+    1fr 1fr 1fr = 33%space 33%space 33%space
+
+    The grid below will have 12 columns:
+    */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    /*
+    The downside of this grid is that its not responsive.
+    I much cleaner and concise way to write above code is as follows,
+    */
+    grid-template-columns: repeat(12,1fr);
+
+    /* 
+    With the minmax function we cans set the minimum width of each column.
+    */
+    grid-template-columns: repeat(12,minmax(240px,1fr));
+
+    /*
+    The minmax function can lead to overflowing across horizontal axis.
+    The question is how do we make these columns breakdown into additional rows
+    when there is no available space instead of them to overflow. 
+
+    The solution is to create an implicit gird. When we call repeat function, instead of calling
+    it 12 times. We will call it with auto-fit. Auto-fit allows the grid to automatically calculate
+    the number of rows and columns along. 
+    The output is a responsive grid.
+    */
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+
+
+}
+
+.basic-grid-1{
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+}
+
+.basic-grid-2{
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+}
+
+/*
+auto-fit takes up all the available space across the grid
+whereas auto-fill makes space for othe columns across the grid when
+is additional space.It does not occupies all the available space.
+*/
