@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Box-Dimensions</title>
+    <style>
+
+        *{
+            margin:0;
+            padding: 0;
+        
+        }
+        /*
+        The most common units for dimensions is pixels. However, now developers tend to use
+        % and ems as well. % displays the box relative to the browser window. If a box in enclosed
+        inside another box, % would display the inner box relative to the outside box. 
+
+        In the example below, I created a box of height and width 300px. In it, there's another box
+        of paragraph tags, whose width and height is set to 75%. This 75% is relative to the outside box
+        of 300*300. 
+        */
+        #box{
+            height: 300px;
+            width: 300px;
+            background-color: #bbbbaa;
+        }
+
+        #box-element{
+            height: 75%;
+            width: 75%;
+            background-color: #0088dd;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="box">
+        <p id='box-element'>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur provident praesentium officiis quasi iste, 
+            harum sed ipsam eaque in dicta, voluptate architecto aperiam est quisquam.
+        </p>
+    </div>
+</body>
+</html>

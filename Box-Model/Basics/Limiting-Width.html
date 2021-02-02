@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        min-width property is used to specify the smallest size of the box when user screen shrinks or
+        is narrow. 
+        max-width is the highest size of the box when the browser window is wide.
+        
+        The example below displays table row box which has a maximum width of 1000px and the minimum
+        width equals to 200px.
+        */
+        .desc{
+            min-width: 200px;
+            max-width: 1000px;
+            text-align: left;
+            padding:5px;
+            margin:0px;
+        }
+        table, td {
+  border: 1px solid black;
+}
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td><img src="./book.jpg" width='200' height="100" alt=""></td>
+        <td class='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusantium dicta, 
+            amet minima placeat hic eaque cum blanditiis omnis, tempore beatae explicabo architecto 
+            sint temporibus cumque obcaecati facere? Voluptates, beatae?</td>
+        <td>$1400</td>
+    </tr>
+</table>
+</body>
+</html>
